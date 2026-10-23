@@ -432,6 +432,18 @@ int game_handle_input(int eventCode, bool isInCombatMode)
         dialogue_system_enter();
     }
 
+    // WASD camera scrolling. Polled from held-key state so it is smooth and
+    // supports diagonals. Ignored while Ctrl/Alt are held.
+    if (!game_ui_is_disabled() && !gmouse_is_scrolling()
+        && keys[SDL_SCANCODE_LCTRL] == 0 && keys[SDL_SCANCODE_RCTRL] == 0
+        && keys[SDL_SCANCODE_LALT] == 0 && keys[SDL_SCANCODE_RALT] == 0) {
+        int scrollX = (keys[SDL_SCANCODE_D] != 0) - (keys[SDL_SCANCODE_A] != 0);
+        int scrollY = (keys[SDL_SCANCODE_S] != 0) - (keys[SDL_SCANCODE_W] != 0);
+        if (scrollX != 0 || scrollY != 0) {
+            map_scroll(scrollX, scrollY);
+        }
+    }
+
     if (eventCode == -1) {
         if ((mouse_get_buttons() & MOUSE_EVENT_WHEEL) != 0) {
             int wheelX;
@@ -536,7 +548,6 @@ int game_handle_input(int eventCode, bool isInCombatMode)
         PauseWindow(false);
         break;
     case KEY_UPPERCASE_A:
-    case KEY_LOWERCASE_A:
         if (intface_is_enabled()) {
             if (!isInCombatMode) {
                 combat(NULL);
@@ -609,7 +620,6 @@ int game_handle_input(int eventCode, bool isInCombatMode)
         }
         break;
     case KEY_UPPERCASE_S:
-    case KEY_LOWERCASE_S:
         // skilldex
         if (intface_is_enabled()) {
             gsound_play_sfx_file("ib1p1xx1");
