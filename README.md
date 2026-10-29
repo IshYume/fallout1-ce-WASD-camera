@@ -1,6 +1,6 @@
-# Fallout Community Edition
+# Fallout Community Edition WASD Camera Patch
 
-Fallout Community Edition is a fully working re-implementation of Fallout, with the same original gameplay, engine bugfixes, and some quality of life improvements, that works (mostly) hassle-free on multiple platforms.
+This is a fork of Fallout Community Edition which is a fully working re-implementation of Fallout, with the same original gameplay, engine bugfixes, and some quality of life improvements, that works (mostly) hassle-free on multiple platforms. It only adds a WASD camera movement patch to the original Fallout Community Edition, it kept bothering me that I couldn't move the camera with WASD keys, so I decided to add this feature to the original Fallout Community Edition, you can use the original keys with shift and WASD for their original functions, for example shift + W will 
 
 There is also [Fallout 2 Community Edition](https://github.com/alexbatalov/fallout2-ce).
 
@@ -105,6 +105,12 @@ In time this stuff will receive in-game interface, right now you have to do it m
 ## Contributing
 
 Here is a couple of current goals. Open up an issue if you have suggestion or feature request.
+
+## Building from source for windows
+
+```cmake -B build -G "Visual Studio 18 2026" -A Win32 "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" "-DFETCHCONTENT_SOURCE_DIR_SDL2=C:/sdl2-src"```
+**NOTE**: I had to clone sdl2 from [here](https://github.com/libsdl-org/SDL) change C:/sdl2-src to wherever you cloned it and then run the above command. Obviously you need to have Visual Studio 18 installed along with C++ tools.
+```cmake --build build --config RelWithDebInfo```
 
 - **Update to v1.2**. This project is based on Reference Edition which implements v1.1 released in November 1997. There is a newer v1.2 released in March 1998 which at least contains important multilingual support.
 
