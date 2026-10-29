@@ -1,6 +1,6 @@
 # Fallout Community Edition WASD Camera Patch
 
-This is a fork of Fallout Community Edition which is a fully working re-implementation of Fallout, with the same original gameplay, engine bugfixes, and some quality of life improvements, that works (mostly) hassle-free on multiple platforms. It only adds a WASD camera movement patch to the original Fallout Community Edition, it kept bothering me that I couldn't move the camera with WASD keys, so I decided to add this feature to the original Fallout Community Edition, you can use the original keys with shift and WASD for their original functions, for example shift + W will 
+This is a fork of Fallout Community Edition which is a fully working re-implementation of Fallout, with the same original gameplay, engine bugfixes, and some quality of life improvements, that works (mostly) hassle-free on multiple platforms. It only adds a WASD camera movement patch to the original Fallout Community Edition, it kept bothering me that I couldn't move the camera with WASD keys, so I decided to add this feature to the original Fallout Community Edition, you can use the original keys with shift and WASD for their original functions, for example shift + A will start combat mode. 
 
 There is also [Fallout 2 Community Edition](https://github.com/alexbatalov/fallout2-ce).
 
